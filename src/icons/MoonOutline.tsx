@@ -1,5 +1,5 @@
-import React, { forwardRef } from "react";
-export interface Props extends React.SVGProps<SVGSVGElement> {
+import React, { forwardRef, SVGAttributes } from "react";
+export interface Props extends SVGAttributes<SVGElement> {
   size?: number;
 }
 const MoonOutline = forwardRef(({ size = 24, ...props }: Props, ref: any) => {

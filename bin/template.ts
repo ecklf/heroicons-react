@@ -5,9 +5,9 @@ export const template = (
 ) => {
   const tsTemplate = template.smart({ plugins: ["typescript"] });
   return tsTemplate.ast`
-      import React, { forwardRef } from 'react';
+      import React, { forwardRef, SVGAttributes } from 'react';
 
-      export interface Props extends React.SVGProps<SVGSVGElement> {
+      export interface Props extends SVGAttributes<SVGElement> {
         size?: number;
       }
 
