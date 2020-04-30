@@ -1,0 +1,23 @@
+import * as React from "react";
+interface Props extends React.SVGProps<SVGSVGElement> {
+  size?: number;
+}
+const Search = React.forwardRef(({ size = 24, ...props }: Props, ref: any) => {
+  return (
+    <svg
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      ref={ref}
+      width={size}
+      height={size}
+      {...props}
+    >
+      <path
+        fillRule="evenodd"
+        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+});
+export default Search;
