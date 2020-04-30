@@ -1,6 +1,6 @@
 {
   "name": "heroicons-react",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "React components for heroicons",
   "types": "build/index.d.ts",
   "main": "build/index.js",
