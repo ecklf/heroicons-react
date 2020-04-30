@@ -1,4 +1,4 @@
-## React Flat Flags
+## Heroicons React
 
 [![npm version](https://img.shields.io/npm/v/heroicons-react.svg)](https://www.npmjs.com/package/heroicons-react)
 [![npm downloads](https://img.shields.io/npm/dm/heroicons-react.svg)](https://www.npmjs.com/package/heroicons-react)
