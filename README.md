@@ -26,10 +26,10 @@ const App = () => {
 export default App;
 ```
 
-Flags can be sized - based on height (default: 15)
+Icons can be sized - based on height (default: 24)
 
 ```javascript
-<Sparkles size={30} />
+<Sparkles size={42} />
 ```
 
 You can also include the whole icon pack:
