@@ -4,13 +4,14 @@
   "description": "React components for heroicons",
   "main": "build/index.js",
   "module": "build/index.es.js",
+  "sideEffects": false,
+  "typings": "build/index.d.ts",
   "files": [
     "build"
   ],
-  "typings": "build/index.d.ts",
   "scripts": {
     "gen": "ts-node --project bin/tsconfig.json --files bin/build.ts",
-    "build": "rollup -c",
+    "build": "npm run gen && rollup -c",
     "watch": "rollup -c --watch"
   },
   "keywords": [
@@ -18,6 +19,13 @@
     "heroicons",
     "heroiconsui"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/impulse/heroicons-react"
+  },
+  "bugs": {
+    "url": "https://github.com/impulse/heroicons-react/issues"
+  },
   "author": "impulse",
   "license": "MIT",
   "peerDependencies": {
