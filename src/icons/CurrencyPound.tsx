@@ -1,25 +1,23 @@
-import * as React from "react";
-interface Props extends React.SVGProps<SVGSVGElement> {
+import React, { forwardRef } from "react";
+export interface Props extends React.SVGProps<SVGSVGElement> {
   size?: number;
 }
-const CurrencyPound = React.forwardRef(
-  ({ size = 24, ...props }: Props, ref: any) => {
-    return (
-      <svg
-        viewBox="0 0 20 20"
-        fill="currentColor"
-        ref={ref}
-        width={size}
-        height={size}
-        {...props}
-      >
-        <path
-          fillRule="evenodd"
-          d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-14a3 3 0 00-3 3v2H7a1 1 0 000 2h1v1a1 1 0 01-1 1 1 1 0 100 2h6a1 1 0 100-2H9.83c.11-.313.17-.65.17-1v-1h1a1 1 0 100-2h-1V7a1 1 0 112 0 1 1 0 102 0 3 3 0 00-3-3z"
-          clipRule="evenodd"
-        />
-      </svg>
-    );
-  }
-);
+const CurrencyPound = forwardRef(({ size = 24, ...props }: Props, ref: any) => {
+  return (
+    <svg
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      ref={ref}
+      width={size}
+      height={size}
+      {...props}
+    >
+      <path
+        fillRule="evenodd"
+        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-14a3 3 0 00-3 3v2H7a1 1 0 000 2h1v1a1 1 0 01-1 1 1 1 0 100 2h6a1 1 0 100-2H9.83c.11-.313.17-.65.17-1v-1h1a1 1 0 100-2h-1V7a1 1 0 112 0 1 1 0 102 0 3 3 0 00-3-3z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+});
 export default CurrencyPound;

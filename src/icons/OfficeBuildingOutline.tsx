@@ -1,8 +1,8 @@
-import * as React from "react";
-interface Props extends React.SVGProps<SVGSVGElement> {
+import React, { forwardRef } from "react";
+export interface Props extends React.SVGProps<SVGSVGElement> {
   size?: number;
 }
-const OfficeBuildingOutline = React.forwardRef(
+const OfficeBuildingOutline = forwardRef(
   ({ size = 24, ...props }: Props, ref: any) => {
     return (
       <svg
