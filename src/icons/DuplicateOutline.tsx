@@ -1,5 +1,5 @@
 import React, { forwardRef, SVGAttributes } from "react";
-export interface Props extends SVGAttributes<SVGElement> {
+interface Props extends SVGAttributes<SVGElement> {
   size?: number;
 }
 const DuplicateOutline = forwardRef(

@@ -1,4 +1,4 @@
-import babel from "@rollup/plugin-babel";
+import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import { terser } from "rollup-plugin-terser";
@@ -23,11 +23,12 @@ export default {
   plugins: [
     peerDepsExternal(),
     resolve(),
-    babel({
-      exclude: "node_modules/**",
-    }),
     typescript({
+      rollupCommonJSResolveHack: true,
       useTsconfigDeclarationDir: true,
+    }),
+    commonjs({
+      include: ["node_modules/**"],
     }),
     terser(),
   ],
