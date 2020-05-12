@@ -5,17 +5,17 @@ export const template = (
 ) => {
   const tsTemplate = template.smart({ plugins: ["typescript"] });
   return tsTemplate.ast`
-      import React, { forwardRef, SVGAttributes } from 'react';
+      ${imports}
 
-      interface Props extends SVGAttributes<SVGElement> {
+      interface Props extends React.SVGAttributes<SVGElement> {
         size?: number;
       }
 
-      const ${componentName} = forwardRef(({ size = 24, ...props }: Props, ref: any) => {
+      const ${componentName} = ({ size = 24, ...props }: Props, svgRef: React.Ref<SVGSVGElement>) => {
         return (
           ${jsx}
         )
-      });
+      };
 
       ${exports}
     `;

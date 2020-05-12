@@ -1,19 +1,25 @@
-import React, { forwardRef, SVGAttributes } from "react";
-interface Props extends SVGAttributes<SVGElement> {
+import * as React from "react";
+interface Props extends React.SVGAttributes<SVGElement> {
   size?: number;
 }
-const Ticket = forwardRef(({ size = 24, ...props }: Props, ref: any) => {
+
+const Ticket = (
+  { size = 24, ...props }: Props,
+  svgRef: React.Ref<SVGSVGElement>
+) => {
   return (
     <svg
       viewBox="0 0 20 20"
       fill="currentColor"
-      ref={ref}
       width={size}
       height={size}
+      ref={svgRef}
       {...props}
     >
       <path d="M2 6a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 100 4v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2a2 2 0 100-4V6z" />
     </svg>
   );
-});
-export default Ticket;
+};
+
+const ForwardRef = React.forwardRef(Ticket);
+export default ForwardRef;

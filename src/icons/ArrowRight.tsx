@@ -1,15 +1,19 @@
-import React, { forwardRef, SVGAttributes } from "react";
-interface Props extends SVGAttributes<SVGElement> {
+import * as React from "react";
+interface Props extends React.SVGAttributes<SVGElement> {
   size?: number;
 }
-const ArrowRight = forwardRef(({ size = 24, ...props }: Props, ref: any) => {
+
+const ArrowRight = (
+  { size = 24, ...props }: Props,
+  svgRef: React.Ref<SVGSVGElement>
+) => {
   return (
     <svg
       viewBox="0 0 20 20"
       fill="currentColor"
-      ref={ref}
       width={size}
       height={size}
+      ref={svgRef}
       {...props}
     >
       <path
@@ -19,5 +23,7 @@ const ArrowRight = forwardRef(({ size = 24, ...props }: Props, ref: any) => {
       />
     </svg>
   );
-});
-export default ArrowRight;
+};
+
+const ForwardRef = React.forwardRef(ArrowRight);
+export default ForwardRef;

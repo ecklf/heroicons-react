@@ -1,15 +1,19 @@
-import React, { forwardRef, SVGAttributes } from "react";
-interface Props extends SVGAttributes<SVGElement> {
+import * as React from "react";
+interface Props extends React.SVGAttributes<SVGElement> {
   size?: number;
 }
-const ClipboardList = forwardRef(({ size = 24, ...props }: Props, ref: any) => {
+
+const ClipboardList = (
+  { size = 24, ...props }: Props,
+  svgRef: React.Ref<SVGSVGElement>
+) => {
   return (
     <svg
       viewBox="0 0 20 20"
       fill="currentColor"
-      ref={ref}
       width={size}
       height={size}
+      ref={svgRef}
       {...props}
     >
       <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
@@ -20,5 +24,7 @@ const ClipboardList = forwardRef(({ size = 24, ...props }: Props, ref: any) => {
       />
     </svg>
   );
-});
-export default ClipboardList;
+};
+
+const ForwardRef = React.forwardRef(ClipboardList);
+export default ForwardRef;

@@ -1,15 +1,19 @@
-import React, { forwardRef, SVGAttributes } from "react";
-interface Props extends SVGAttributes<SVGElement> {
+import * as React from "react";
+interface Props extends React.SVGAttributes<SVGElement> {
   size?: number;
 }
-const Qrcode = forwardRef(({ size = 24, ...props }: Props, ref: any) => {
+
+const Qrcode = (
+  { size = 24, ...props }: Props,
+  svgRef: React.Ref<SVGSVGElement>
+) => {
   return (
     <svg
       viewBox="0 0 20 20"
       fill="currentColor"
-      ref={ref}
       width={size}
       height={size}
+      ref={svgRef}
       {...props}
     >
       <path
@@ -20,5 +24,7 @@ const Qrcode = forwardRef(({ size = 24, ...props }: Props, ref: any) => {
       <path d="M11 4a1 1 0 10-2 0v1a1 1 0 002 0V4zm-1 3a1 1 0 011 1v1h2a1 1 0 110 2h-3a1 1 0 01-1-1V8a1 1 0 011-1zm6 2a1 1 0 100 2 1 1 0 000-2zm-7 4a1 1 0 011-1h1a1 1 0 110 2v2a1 1 0 11-2 0v-3zm-2-2a1 1 0 100-2H4a1 1 0 100 2h3zm10 2a1 1 0 01-1 1h-2a1 1 0 110-2h2a1 1 0 011 1zm-1 4a1 1 0 100-2h-3a1 1 0 100 2h3z" />
     </svg>
   );
-});
-export default Qrcode;
+};
+
+const ForwardRef = React.forwardRef(Qrcode);
+export default ForwardRef;

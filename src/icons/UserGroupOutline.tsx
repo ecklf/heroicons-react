@@ -1,27 +1,31 @@
-import React, { forwardRef, SVGAttributes } from "react";
-interface Props extends SVGAttributes<SVGElement> {
+import * as React from "react";
+interface Props extends React.SVGAttributes<SVGElement> {
   size?: number;
 }
-const UserGroupOutline = forwardRef(
-  ({ size = 24, ...props }: Props, ref: any) => {
-    return (
-      <svg
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        ref={ref}
-        width={size}
-        height={size}
-        {...props}
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-        />
-      </svg>
-    );
-  }
-);
-export default UserGroupOutline;
+
+const UserGroupOutline = (
+  { size = 24, ...props }: Props,
+  svgRef: React.Ref<SVGSVGElement>
+) => {
+  return (
+    <svg
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      width={size}
+      height={size}
+      ref={svgRef}
+      {...props}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+      />
+    </svg>
+  );
+};
+
+const ForwardRef = React.forwardRef(UserGroupOutline);
+export default ForwardRef;

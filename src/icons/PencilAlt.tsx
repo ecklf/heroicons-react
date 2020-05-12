@@ -1,15 +1,19 @@
-import React, { forwardRef, SVGAttributes } from "react";
-interface Props extends SVGAttributes<SVGElement> {
+import * as React from "react";
+interface Props extends React.SVGAttributes<SVGElement> {
   size?: number;
 }
-const PencilAlt = forwardRef(({ size = 24, ...props }: Props, ref: any) => {
+
+const PencilAlt = (
+  { size = 24, ...props }: Props,
+  svgRef: React.Ref<SVGSVGElement>
+) => {
   return (
     <svg
       viewBox="0 0 20 20"
       fill="currentColor"
-      ref={ref}
       width={size}
       height={size}
+      ref={svgRef}
       {...props}
     >
       <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
@@ -20,5 +24,7 @@ const PencilAlt = forwardRef(({ size = 24, ...props }: Props, ref: any) => {
       />
     </svg>
   );
-});
-export default PencilAlt;
+};
+
+const ForwardRef = React.forwardRef(PencilAlt);
+export default ForwardRef;

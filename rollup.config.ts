@@ -26,10 +26,9 @@ export default {
     typescript({
       rollupCommonJSResolveHack: true,
       useTsconfigDeclarationDir: true,
+      clean: true,
     }),
-    commonjs({
-      include: ["node_modules/**"],
-    }),
+    commonjs(),
     terser(),
   ],
 };

@@ -1,16 +1,20 @@
-import React, { forwardRef, SVGAttributes } from "react";
-interface Props extends SVGAttributes<SVGElement> {
+import * as React from "react";
+interface Props extends React.SVGAttributes<SVGElement> {
   size?: number;
 }
-const MoonOutline = forwardRef(({ size = 24, ...props }: Props, ref: any) => {
+
+const MoonOutline = (
+  { size = 24, ...props }: Props,
+  svgRef: React.Ref<SVGSVGElement>
+) => {
   return (
     <svg
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
-      ref={ref}
       width={size}
       height={size}
+      ref={svgRef}
       {...props}
     >
       <path
@@ -21,5 +25,7 @@ const MoonOutline = forwardRef(({ size = 24, ...props }: Props, ref: any) => {
       />
     </svg>
   );
-});
-export default MoonOutline;
+};
+
+const ForwardRef = React.forwardRef(MoonOutline);
+export default ForwardRef;

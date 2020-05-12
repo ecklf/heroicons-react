@@ -1,25 +1,29 @@
-import React, { forwardRef, SVGAttributes } from "react";
-interface Props extends SVGAttributes<SVGElement> {
+import * as React from "react";
+interface Props extends React.SVGAttributes<SVGElement> {
   size?: number;
 }
-const ArrowNarrowRight = forwardRef(
-  ({ size = 24, ...props }: Props, ref: any) => {
-    return (
-      <svg
-        viewBox="0 0 20 20"
-        fill="currentColor"
-        ref={ref}
-        width={size}
-        height={size}
-        {...props}
-      >
-        <path
-          fillRule="evenodd"
-          d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-          clipRule="evenodd"
-        />
-      </svg>
-    );
-  }
-);
-export default ArrowNarrowRight;
+
+const ArrowNarrowRight = (
+  { size = 24, ...props }: Props,
+  svgRef: React.Ref<SVGSVGElement>
+) => {
+  return (
+    <svg
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      width={size}
+      height={size}
+      ref={svgRef}
+      {...props}
+    >
+      <path
+        fillRule="evenodd"
+        d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+};
+
+const ForwardRef = React.forwardRef(ArrowNarrowRight);
+export default ForwardRef;

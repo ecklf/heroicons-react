@@ -1,27 +1,31 @@
-import React, { forwardRef, SVGAttributes } from "react";
-interface Props extends SVGAttributes<SVGElement> {
+import * as React from "react";
+interface Props extends React.SVGAttributes<SVGElement> {
   size?: number;
 }
-const DotsVerticalOutline = forwardRef(
-  ({ size = 24, ...props }: Props, ref: any) => {
-    return (
-      <svg
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        ref={ref}
-        width={size}
-        height={size}
-        {...props}
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
-        />
-      </svg>
-    );
-  }
-);
-export default DotsVerticalOutline;
+
+const DotsVerticalOutline = (
+  { size = 24, ...props }: Props,
+  svgRef: React.Ref<SVGSVGElement>
+) => {
+  return (
+    <svg
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      width={size}
+      height={size}
+      ref={svgRef}
+      {...props}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+      />
+    </svg>
+  );
+};
+
+const ForwardRef = React.forwardRef(DotsVerticalOutline);
+export default ForwardRef;

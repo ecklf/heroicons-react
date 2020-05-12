@@ -1,15 +1,19 @@
-import React, { forwardRef, SVGAttributes } from "react";
-interface Props extends SVGAttributes<SVGElement> {
+import * as React from "react";
+interface Props extends React.SVGAttributes<SVGElement> {
   size?: number;
 }
-const EyeOff = forwardRef(({ size = 24, ...props }: Props, ref: any) => {
+
+const EyeOff = (
+  { size = 24, ...props }: Props,
+  svgRef: React.Ref<SVGSVGElement>
+) => {
   return (
     <svg
       viewBox="0 0 20 20"
       fill="currentColor"
-      ref={ref}
       width={size}
       height={size}
+      ref={svgRef}
       {...props}
     >
       <path
@@ -20,5 +24,7 @@ const EyeOff = forwardRef(({ size = 24, ...props }: Props, ref: any) => {
       <path d="M12.454 16.697L9.75 13.992a4 4 0 01-3.742-3.741L2.335 6.578A9.98 9.98 0 00.458 10c1.274 4.057 5.065 7 9.542 7 .847 0 1.669-.105 2.454-.303z" />
     </svg>
   );
-});
-export default EyeOff;
+};
+
+const ForwardRef = React.forwardRef(EyeOff);
+export default ForwardRef;

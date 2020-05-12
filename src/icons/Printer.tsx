@@ -1,15 +1,19 @@
-import React, { forwardRef, SVGAttributes } from "react";
-interface Props extends SVGAttributes<SVGElement> {
+import * as React from "react";
+interface Props extends React.SVGAttributes<SVGElement> {
   size?: number;
 }
-const Printer = forwardRef(({ size = 24, ...props }: Props, ref: any) => {
+
+const Printer = (
+  { size = 24, ...props }: Props,
+  svgRef: React.Ref<SVGSVGElement>
+) => {
   return (
     <svg
       viewBox="0 0 20 20"
       fill="currentColor"
-      ref={ref}
       width={size}
       height={size}
+      ref={svgRef}
       {...props}
     >
       <path
@@ -19,5 +23,7 @@ const Printer = forwardRef(({ size = 24, ...props }: Props, ref: any) => {
       />
     </svg>
   );
-});
-export default Printer;
+};
+
+const ForwardRef = React.forwardRef(Printer);
+export default ForwardRef;

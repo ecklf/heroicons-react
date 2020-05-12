@@ -42,7 +42,8 @@ const genNamedComponentFromBuffer = async (
       {
         template,
         svgo: true,
-        svgProps: { ref: "{ref}", width: "{size}", height: "{size}" },
+        ref: true,
+        svgProps: { width: "{size}", height: "{size}" },
         plugins: [
           "@svgr/plugin-svgo",
           "@svgr/plugin-jsx",

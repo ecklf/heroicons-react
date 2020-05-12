@@ -1,16 +1,20 @@
-import React, { forwardRef, SVGAttributes } from "react";
-interface Props extends SVGAttributes<SVGElement> {
+import * as React from "react";
+interface Props extends React.SVGAttributes<SVGElement> {
   size?: number;
 }
-const HeartOutline = forwardRef(({ size = 24, ...props }: Props, ref: any) => {
+
+const HeartOutline = (
+  { size = 24, ...props }: Props,
+  svgRef: React.Ref<SVGSVGElement>
+) => {
   return (
     <svg
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
-      ref={ref}
       width={size}
       height={size}
+      ref={svgRef}
       {...props}
     >
       <path
@@ -21,5 +25,7 @@ const HeartOutline = forwardRef(({ size = 24, ...props }: Props, ref: any) => {
       />
     </svg>
   );
-});
-export default HeartOutline;
+};
+
+const ForwardRef = React.forwardRef(HeartOutline);
+export default ForwardRef;

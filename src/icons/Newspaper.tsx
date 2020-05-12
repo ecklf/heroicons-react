@@ -1,15 +1,19 @@
-import React, { forwardRef, SVGAttributes } from "react";
-interface Props extends SVGAttributes<SVGElement> {
+import * as React from "react";
+interface Props extends React.SVGAttributes<SVGElement> {
   size?: number;
 }
-const Newspaper = forwardRef(({ size = 24, ...props }: Props, ref: any) => {
+
+const Newspaper = (
+  { size = 24, ...props }: Props,
+  svgRef: React.Ref<SVGSVGElement>
+) => {
   return (
     <svg
       viewBox="0 0 20 20"
       fill="currentColor"
-      ref={ref}
       width={size}
       height={size}
+      ref={svgRef}
       {...props}
     >
       <path
@@ -20,5 +24,7 @@ const Newspaper = forwardRef(({ size = 24, ...props }: Props, ref: any) => {
       <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z" />
     </svg>
   );
-});
-export default Newspaper;
+};
+
+const ForwardRef = React.forwardRef(Newspaper);
+export default ForwardRef;

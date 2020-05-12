@@ -1,25 +1,29 @@
-import React, { forwardRef, SVGAttributes } from "react";
-interface Props extends SVGAttributes<SVGElement> {
+import * as React from "react";
+interface Props extends React.SVGAttributes<SVGElement> {
   size?: number;
 }
-const DesktopComputer = forwardRef(
-  ({ size = 24, ...props }: Props, ref: any) => {
-    return (
-      <svg
-        viewBox="0 0 20 20"
-        fill="currentColor"
-        ref={ref}
-        width={size}
-        height={size}
-        {...props}
-      >
-        <path
-          fillRule="evenodd"
-          d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z"
-          clipRule="evenodd"
-        />
-      </svg>
-    );
-  }
-);
-export default DesktopComputer;
+
+const DesktopComputer = (
+  { size = 24, ...props }: Props,
+  svgRef: React.Ref<SVGSVGElement>
+) => {
+  return (
+    <svg
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      width={size}
+      height={size}
+      ref={svgRef}
+      {...props}
+    >
+      <path
+        fillRule="evenodd"
+        d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+};
+
+const ForwardRef = React.forwardRef(DesktopComputer);
+export default ForwardRef;

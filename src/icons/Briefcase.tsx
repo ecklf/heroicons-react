@@ -1,15 +1,19 @@
-import React, { forwardRef, SVGAttributes } from "react";
-interface Props extends SVGAttributes<SVGElement> {
+import * as React from "react";
+interface Props extends React.SVGAttributes<SVGElement> {
   size?: number;
 }
-const Briefcase = forwardRef(({ size = 24, ...props }: Props, ref: any) => {
+
+const Briefcase = (
+  { size = 24, ...props }: Props,
+  svgRef: React.Ref<SVGSVGElement>
+) => {
   return (
     <svg
       viewBox="0 0 20 20"
       fill="currentColor"
-      ref={ref}
       width={size}
       height={size}
+      ref={svgRef}
       {...props}
     >
       <path
@@ -20,5 +24,7 @@ const Briefcase = forwardRef(({ size = 24, ...props }: Props, ref: any) => {
       <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15a24.98 24.98 0 01-8-1.308z" />
     </svg>
   );
-});
-export default Briefcase;
+};
+
+const ForwardRef = React.forwardRef(Briefcase);
+export default ForwardRef;
