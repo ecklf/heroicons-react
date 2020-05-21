@@ -1,5 +1,5 @@
 import * as React from "react";
-interface Props extends React.SVGAttributes<SVGElement> {
+interface Props extends React.SVGProps<SVGSVGElement> {
   size?: number;
 }
 
