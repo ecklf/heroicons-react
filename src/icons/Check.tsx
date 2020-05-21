@@ -1,12 +1,9 @@
-import * as React from "react";
-interface Props extends React.SVGProps<SVGSVGElement> {
+import React, { Ref, SVGProps } from "react";
+interface Props extends SVGProps<SVGSVGElement> {
   size?: number;
 }
 
-const Check = (
-  { size = 24, ...props }: Props,
-  svgRef: React.Ref<SVGSVGElement>
-) => {
+const Check = ({ size = 24, ...props }: Props, svgRef: Ref<SVGSVGElement>) => {
   return (
     <svg
       viewBox="0 0 20 20"

@@ -1,11 +1,11 @@
-import * as React from "react";
-interface Props extends React.SVGProps<SVGSVGElement> {
+import React, { Ref, SVGProps } from "react";
+interface Props extends SVGProps<SVGSVGElement> {
   size?: number;
 }
 
 const VolumeOffOutline = (
   { size = 24, ...props }: Props,
-  svgRef: React.Ref<SVGSVGElement>
+  svgRef: Ref<SVGSVGElement>
 ) => {
   return (
     <svg

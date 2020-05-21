@@ -24,7 +24,6 @@ export default {
     peerDepsExternal(),
     resolve(),
     typescript({
-      rollupCommonJSResolveHack: true,
       useTsconfigDeclarationDir: true,
       clean: true,
     }),
