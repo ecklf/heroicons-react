@@ -15,7 +15,7 @@ const Fire = ({ size = 24, ...props }: Props, svgRef: Ref<SVGSVGElement>) => {
     >
       <g clipPath="url(#prefix__clip0)">
         <path
-          stroke="#374151"
+          stroke="currentColor"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={2}
