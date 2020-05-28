@@ -1,11 +1,11 @@
-import React, { Ref, SVGProps } from "react";
-interface Props extends SVGProps<SVGSVGElement> {
+import * as React from "react";
+interface Props extends React.SVGProps<SVGSVGElement> {
   size?: number;
 }
 
 const XOutline = (
   { size = 24, ...props }: Props,
-  svgRef: Ref<SVGSVGElement>
+  svgRef: React.Ref<SVGSVGElement>
 ) => {
   return (
     <svg
