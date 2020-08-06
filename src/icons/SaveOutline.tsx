@@ -3,27 +3,29 @@ interface Props extends React.SVGProps<SVGSVGElement> {
   size?: number;
 }
 
-const Logout = (
+const SaveOutline = (
   { size = 24, ...props }: Props,
   svgRef: React.Ref<SVGSVGElement>
 ) => {
   return (
     <svg
-      viewBox="0 0 20 20"
-      fill="currentColor"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
       width={size}
       height={size}
       ref={svgRef}
       {...props}
     >
       <path
-        fillRule="evenodd"
-        d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z"
-        clipRule="evenodd"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"
       />
     </svg>
   );
 };
 
-const ForwardRef = React.forwardRef(Logout);
+const ForwardRef = React.forwardRef(SaveOutline);
 export default ForwardRef;

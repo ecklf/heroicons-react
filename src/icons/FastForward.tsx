@@ -3,7 +3,7 @@ interface Props extends React.SVGProps<SVGSVGElement> {
   size?: number;
 }
 
-const Logout = (
+const FastForward = (
   { size = 24, ...props }: Props,
   svgRef: React.Ref<SVGSVGElement>
 ) => {
@@ -16,14 +16,10 @@ const Logout = (
       ref={svgRef}
       {...props}
     >
-      <path
-        fillRule="evenodd"
-        d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z"
-        clipRule="evenodd"
-      />
+      <path d="M4.555 5.168A1 1 0 003 6v8a1 1 0 001.555.832L10 11.202V14a1 1 0 001.555.832l6-4a1 1 0 000-1.664l-6-4A1 1 0 0010 6v2.798l-5.445-3.63z" />
     </svg>
   );
 };
 
-const ForwardRef = React.forwardRef(Logout);
+const ForwardRef = React.forwardRef(FastForward);
 export default ForwardRef;

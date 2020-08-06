@@ -3,7 +3,7 @@ interface Props extends React.SVGProps<SVGSVGElement> {
   size?: number;
 }
 
-const Logout = (
+const Scissors = (
   { size = 24, ...props }: Props,
   svgRef: React.Ref<SVGSVGElement>
 ) => {
@@ -18,12 +18,13 @@ const Logout = (
     >
       <path
         fillRule="evenodd"
-        d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z"
+        d="M5.5 2a3.5 3.5 0 101.665 6.58L8.585 10l-1.42 1.42a3.5 3.5 0 101.414 1.414l8.128-8.127a1 1 0 00-1.414-1.414L10 8.586l-1.42-1.42A3.5 3.5 0 005.5 2zM4 5.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm0 9a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z"
         clipRule="evenodd"
       />
+      <path d="M12.828 11.414a1 1 0 00-1.414 1.414l3.879 3.88a1 1 0 001.414-1.415l-3.879-3.879z" />
     </svg>
   );
 };
 
-const ForwardRef = React.forwardRef(Logout);
+const ForwardRef = React.forwardRef(Scissors);
 export default ForwardRef;

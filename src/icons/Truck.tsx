@@ -3,7 +3,7 @@ interface Props extends React.SVGProps<SVGSVGElement> {
   size?: number;
 }
 
-const Logout = (
+const Truck = (
   { size = 24, ...props }: Props,
   svgRef: React.Ref<SVGSVGElement>
 ) => {
@@ -16,14 +16,11 @@ const Logout = (
       ref={svgRef}
       {...props}
     >
-      <path
-        fillRule="evenodd"
-        d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z"
-        clipRule="evenodd"
-      />
+      <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm7 0a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+      <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zm11 3a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z" />
     </svg>
   );
 };
 
-const ForwardRef = React.forwardRef(Logout);
+const ForwardRef = React.forwardRef(Truck);
 export default ForwardRef;
