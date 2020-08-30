@@ -8,20 +8,13 @@ const BanOutline = (
   svgRef: React.Ref<SVGSVGElement>
 ) => {
   return (
-    <svg
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      width={size}
-      height={size}
-      ref={svgRef}
-      {...props}
-    >
+    <svg width={size} height={size} fill="none" ref={svgRef} {...props}>
       <path
+        d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"
+        stroke="#4A5568"
+        strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth={2}
-        d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"
       />
     </svg>
   );

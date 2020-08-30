@@ -8,18 +8,12 @@ const Minus = (
   svgRef: React.Ref<SVGSVGElement>
 ) => {
   return (
-    <svg
-      viewBox="0 0 20 20"
-      fill="currentColor"
-      width={size}
-      height={size}
-      ref={svgRef}
-      {...props}
-    >
+    <svg width={size} height={size} fill="none" ref={svgRef} {...props}>
       <path
         fillRule="evenodd"
-        d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z"
         clipRule="evenodd"
+        d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+        fill="#374151"
       />
     </svg>
   );

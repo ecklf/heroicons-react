@@ -8,20 +8,13 @@ const ChevronDoubleRightOutline = (
   svgRef: React.Ref<SVGSVGElement>
 ) => {
   return (
-    <svg
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      width={size}
-      height={size}
-      ref={svgRef}
-      {...props}
-    >
+    <svg width={size} height={size} fill="none" ref={svgRef} {...props}>
       <path
+        d="M13 5l7 7-7 7M5 5l7 7-7 7"
+        stroke="#374151"
+        strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth={2}
-        d="M13 5l7 7-7 7M5 5l7 7-7 7"
       />
     </svg>
   );

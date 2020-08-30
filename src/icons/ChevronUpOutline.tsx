@@ -8,20 +8,13 @@ const ChevronUpOutline = (
   svgRef: React.Ref<SVGSVGElement>
 ) => {
   return (
-    <svg
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      width={size}
-      height={size}
-      ref={svgRef}
-      {...props}
-    >
+    <svg width={size} height={size} fill="none" ref={svgRef} {...props}>
       <path
+        d="M5 15l7-7 7 7"
+        stroke="#4A5568"
+        strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth={2}
-        d="M5 15l7-7 7 7"
       />
     </svg>
   );

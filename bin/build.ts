@@ -4,7 +4,7 @@ import template from "./template";
 const junk = require("junk");
 
 const srcDir = "./src";
-const inputPath = "./heroicons";
+const inputPath = "./heroicons/src";
 const iconTypes = ["solid", "outline"];
 const outputPath = "icons";
 
@@ -65,6 +65,7 @@ const genNamedComponentFromBuffer = async (
     const fileList = (await fs.readdir(`${inputPath}/${type}`)).filter(
       junk.not
     );
+
     for (let iconName of fileList) {
       const exportName = getIconNameByType(iconName, getIconSuffixByType(type));
 

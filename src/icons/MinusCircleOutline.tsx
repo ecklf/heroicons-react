@@ -8,20 +8,13 @@ const MinusCircleOutline = (
   svgRef: React.Ref<SVGSVGElement>
 ) => {
   return (
-    <svg
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      width={size}
-      height={size}
-      ref={svgRef}
-      {...props}
-    >
+    <svg width={size} height={size} fill="none" ref={svgRef} {...props}>
       <path
+        d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+        stroke="#4A5568"
+        strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth={2}
-        d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
       />
     </svg>
   );
