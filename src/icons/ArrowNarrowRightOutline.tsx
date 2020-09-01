@@ -8,13 +8,20 @@ const ArrowNarrowRightOutline = (
   svgRef: React.Ref<SVGSVGElement>
 ) => {
   return (
-    <svg width={size} height={size} fill="none" ref={svgRef} {...props}>
+    <svg
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      width={size}
+      height={size}
+      ref={svgRef}
+      {...props}
+    >
       <path
-        d="M17 8l4 4m0 0l-4 4m4-4H3"
-        stroke="#4A5568"
-        strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
+        strokeWidth={2}
+        d="M17 8l4 4m0 0l-4 4m4-4H3"
       />
     </svg>
   );

@@ -8,13 +8,20 @@ const TrendingDownOutline = (
   svgRef: React.Ref<SVGSVGElement>
 ) => {
   return (
-    <svg width={size} height={size} fill="none" ref={svgRef} {...props}>
+    <svg
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      width={size}
+      height={size}
+      ref={svgRef}
+      {...props}
+    >
       <path
-        d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"
-        stroke="#4A5568"
-        strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
+        strokeWidth={2}
+        d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"
       />
     </svg>
   );

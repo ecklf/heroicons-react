@@ -8,13 +8,20 @@ const MenuAlt2Outline = (
   svgRef: React.Ref<SVGSVGElement>
 ) => {
   return (
-    <svg width={size} height={size} fill="none" ref={svgRef} {...props}>
+    <svg
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      width={size}
+      height={size}
+      ref={svgRef}
+      {...props}
+    >
       <path
-        d="M4 6h16M4 12h16M4 18h7"
-        stroke="#4A5568"
-        strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
+        strokeWidth={2}
+        d="M4 6h16M4 12h16M4 18h7"
       />
     </svg>
   );

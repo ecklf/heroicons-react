@@ -8,13 +8,20 @@ const PlusOutline = (
   svgRef: React.Ref<SVGSVGElement>
 ) => {
   return (
-    <svg width={size} height={size} fill="none" ref={svgRef} {...props}>
+    <svg
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      width={size}
+      height={size}
+      ref={svgRef}
+      {...props}
+    >
       <path
-        d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-        stroke="#374151"
-        strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
+        strokeWidth={2}
+        d="M12 6v6m0 0v6m0-6h6m-6 0H6"
       />
     </svg>
   );

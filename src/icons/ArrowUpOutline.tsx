@@ -8,13 +8,20 @@ const ArrowUpOutline = (
   svgRef: React.Ref<SVGSVGElement>
 ) => {
   return (
-    <svg width={size} height={size} fill="none" ref={svgRef} {...props}>
+    <svg
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      width={size}
+      height={size}
+      ref={svgRef}
+      {...props}
+    >
       <path
-        d="M5 10l7-7m0 0l7 7m-7-7v18"
-        stroke="#4A5568"
-        strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
+        strokeWidth={2}
+        d="M5 10l7-7m0 0l7 7m-7-7v18"
       />
     </svg>
   );

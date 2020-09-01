@@ -8,12 +8,18 @@ const BookmarkAlt = (
   svgRef: React.Ref<SVGSVGElement>
 ) => {
   return (
-    <svg width={size} height={size} fill="none" ref={svgRef} {...props}>
+    <svg
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      width={size}
+      height={size}
+      ref={svgRef}
+      {...props}
+    >
       <path
         fillRule="evenodd"
-        clipRule="evenodd"
         d="M3 5a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5zm11 1H6v8l4-2 4 2V6z"
-        fill="#4B5563"
+        clipRule="evenodd"
       />
     </svg>
   );
